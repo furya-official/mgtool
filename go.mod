@@ -5,7 +5,7 @@ go 1.13
 require (
 	github.com/Jeffail/gabs/v2 v2.6.0
 	github.com/cosmos/cosmos-sdk v0.39.2
-	github.com/furya-official/mage @v0
+	github.com/furya-official/mage v0.0.1-mage.1
 	github.com/kr/text v0.2.0 // indirect
 	github.com/niemeyer/pretty v0.0.0-20200227124842-a10e7caefd8e // indirect
 	github.com/onsi/ginkgo v1.12.0 // indirect
