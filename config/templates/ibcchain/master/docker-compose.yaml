@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+    ibcnode:
+        image: "mage/mage:v0.16.1"
+        ports:
+            # open rpc port
+            - "26658:26658"
+            # open rest port
+            - "1318:1318"
+            # open grpc port
+            - "9092:9092"
+            # open grpc-web port
+            - "9093:9093"
+        volumes:
+            - "./ibcchain/initstate/.mage/config:/root/.mage/config"
+            - "./ibcchain/initstate/.mage/keyring-test/:/root/.mage/keyring-test"
+        # start the blockchain, and set rpc to listen to connections from outside the container
+        command: ["sh", "-c", "/root/.mage/config/init-data-directory.sh && mage start --rpc.laddr=tcp://0.0.0.0:26658"]

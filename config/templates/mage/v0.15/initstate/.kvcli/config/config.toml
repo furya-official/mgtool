@@ -1,0 +1,4 @@
+keyring-backend = "test"
+chain-id = "mage-localnet"
+trust-node = true
+broadcast-mode = "block"

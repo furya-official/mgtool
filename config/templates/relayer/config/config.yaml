@@ -1,0 +1,20 @@
+global:
+  api-listen-addr: :5183
+  timeout: 10s
+  light-cache-size: 20
+chains:
+- key: testkey
+  chain-id: magelocalnet_8888-1
+  rpc-addr: 'http://magenode:26657'
+  account-prefix: mage
+  gas-adjustment: 1.5
+  gas-prices: 0.001umage
+  trusting-period: 30m
+- key: testkey
+  chain-id: mage-localnet-2
+  rpc-addr: 'http://ibcnode:26658'
+  account-prefix: mage
+  gas-adjustment: 1.5
+  gas-prices: 0.001uatom
+  trusting-period: 30m
+paths: {}

@@ -1,0 +1,105 @@
+version: '3'
+services:
+  mage-1:
+    image: "mage/mage:${MAGE_IMAGE_TAG:-master}"
+    ports:
+      # open default mage rpc port
+      - "26657:26657"
+      # open rest port
+      - "1317:1317"
+      # open grpc port
+      - "9090:9090"
+      # open grpc-web port
+      - "9091:9091"
+      # open EVM JSON-RPC port
+      - "8545:8545"
+      # open Eth websocket port
+      - "8546:8546"
+    volumes:
+      - "./mage-1:/root/.mage"
+    # start the blockchain, and set rpc to listen to connections from outside the container
+    command:
+      - "sh"
+      - "-c"
+      - "/root/.mage/config/init-data-directory.sh && mage start --rpc.laddr=tcp://0.0.0.0:26657"
+  mage-2:
+    image: "mage/mage:${MAGE_IMAGE_TAG:-master}"
+    volumes:
+      - "./mage-2:/root/.mage"
+    # start the blockchain, and set rpc to listen to connections from outside the container
+    command:
+      - "sh"
+      - "-c"
+      - "/root/.mage/config/init-data-directory.sh && mage start --rpc.laddr=tcp://0.0.0.0:26657"
+  mage-3:
+    image: "mage/mage:${MAGE_IMAGE_TAG:-master}"
+    volumes:
+      - "./mage-3:/root/.mage"
+    # start the blockchain, and set rpc to listen to connections from outside the container
+    command:
+      - "sh"
+      - "-c"
+      - "/root/.mage/config/init-data-directory.sh && mage start --rpc.laddr=tcp://0.0.0.0:26657"
+  mage-4:
+    image: "mage/mage:${MAGE_IMAGE_TAG:-master}"
+    volumes:
+      - "./mage-4:/root/.mage"
+    # start the blockchain, and set rpc to listen to connections from outside the container
+    command:
+      - "sh"
+      - "-c"
+      - "/root/.mage/config/init-data-directory.sh && mage start --rpc.laddr=tcp://0.0.0.0:26657"
+  mage-5:
+    image: "mage/mage:${MAGE_IMAGE_TAG:-master}"
+    volumes:
+      - "./mage-5:/root/.mage"
+    # start the blockchain, and set rpc to listen to connections from outside the container
+    command:
+      - "sh"
+      - "-c"
+      - "/root/.mage/config/init-data-directory.sh && mage start --rpc.laddr=tcp://0.0.0.0:26657"
+  mage-6:
+    image: "mage/mage:${MAGE_IMAGE_TAG:-master}"
+    volumes:
+      - "./mage-6:/root/.mage"
+    # start the blockchain, and set rpc to listen to connections from outside the container
+    command:
+      - "sh"
+      - "-c"
+      - "/root/.mage/config/init-data-directory.sh && mage start --rpc.laddr=tcp://0.0.0.0:26657"
+  mage-7:
+    image: "mage/mage:${MAGE_IMAGE_TAG:-master}"
+    volumes:
+      - "./mage-7:/root/.mage"
+    # start the blockchain, and set rpc to listen to connections from outside the container
+    command:
+      - "sh"
+      - "-c"
+      - "/root/.mage/config/init-data-directory.sh && mage start --rpc.laddr=tcp://0.0.0.0:26657"
+  mage-8:
+    image: "mage/mage:${MAGE_IMAGE_TAG:-master}"
+    volumes:
+      - "./mage-8:/root/.mage"
+    # start the blockchain, and set rpc to listen to connections from outside the container
+    command:
+      - "sh"
+      - "-c"
+      - "/root/.mage/config/init-data-directory.sh && mage start --rpc.laddr=tcp://0.0.0.0:26657"
+  mage-9:
+    image: "mage/mage:${MAGE_IMAGE_TAG:-master}"
+    volumes:
+      - "./mage-9:/root/.mage"
+    # start the blockchain, and set rpc to listen to connections from outside the container
+    command:
+      - "sh"
+      - "-c"
+      - "/root/.mage/config/init-data-directory.sh && mage start --rpc.laddr=tcp://0.0.0.0:26657"
+  mage-10:
+    image: "mage/mage:${MAGE_IMAGE_TAG:-master}"
+    volumes:
+      - "./mage-10:/root/.mage"
+    # start the blockchain, and set rpc to listen to connections from outside the container
+    command:
+      - "sh"
+      - "-c"
+      - "/root/.mage/config/init-data-directory.sh && mage start --rpc.laddr=tcp://0.0.0.0:26657"
