@@ -1,4 +1,4 @@
-module github.com/mage-labs/mgtool
+module github.com/kava-labs/kvtool
 
 go 1.13
 
