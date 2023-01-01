@@ -1,9 +1,9 @@
 version: '3'
 services:
-  kava-1:
-    image: "kava/kava:${KAVA_IMAGE_TAG:-master}"
+  mage-1:
+    image: "mage/mage:${KAVA_IMAGE_TAG:-master}"
     ports:
-      # open default kava rpc port
+      # open default mage rpc port
       - "26657:26657"
       # open rest port
       - "1317:1317"
@@ -16,90 +16,90 @@ services:
       # open Eth websocket port
       - "8546:8546"
     volumes:
-      - "./kava-1:/root/.kava"
+      - "./mage-1:/root/.mage"
     # start the blockchain, and set rpc to listen to connections from outside the container
     command:
       - "sh"
       - "-c"
-      - "/root/.kava/config/init-data-directory.sh && kava start --rpc.laddr=tcp://0.0.0.0:26657"
-  kava-2:
-    image: "kava/kava:${KAVA_IMAGE_TAG:-master}"
+      - "/root/.mage/config/init-data-directory.sh && mage start --rpc.laddr=tcp://0.0.0.0:26657"
+  mage-2:
+    image: "mage/mage:${KAVA_IMAGE_TAG:-master}"
     volumes:
-      - "./kava-2:/root/.kava"
+      - "./mage-2:/root/.mage"
     # start the blockchain, and set rpc to listen to connections from outside the container
     command:
       - "sh"
       - "-c"
-      - "/root/.kava/config/init-data-directory.sh && kava start --rpc.laddr=tcp://0.0.0.0:26657"
-  kava-3:
-    image: "kava/kava:${KAVA_IMAGE_TAG:-master}"
+      - "/root/.mage/config/init-data-directory.sh && mage start --rpc.laddr=tcp://0.0.0.0:26657"
+  mage-3:
+    image: "mage/mage:${KAVA_IMAGE_TAG:-master}"
     volumes:
-      - "./kava-3:/root/.kava"
+      - "./mage-3:/root/.mage"
     # start the blockchain, and set rpc to listen to connections from outside the container
     command:
       - "sh"
       - "-c"
-      - "/root/.kava/config/init-data-directory.sh && kava start --rpc.laddr=tcp://0.0.0.0:26657"
-  kava-4:
-    image: "kava/kava:${KAVA_IMAGE_TAG:-master}"
+      - "/root/.mage/config/init-data-directory.sh && mage start --rpc.laddr=tcp://0.0.0.0:26657"
+  mage-4:
+    image: "mage/mage:${KAVA_IMAGE_TAG:-master}"
     volumes:
-      - "./kava-4:/root/.kava"
+      - "./mage-4:/root/.mage"
     # start the blockchain, and set rpc to listen to connections from outside the container
     command:
       - "sh"
       - "-c"
-      - "/root/.kava/config/init-data-directory.sh && kava start --rpc.laddr=tcp://0.0.0.0:26657"
-  kava-5:
-    image: "kava/kava:${KAVA_IMAGE_TAG:-master}"
+      - "/root/.mage/config/init-data-directory.sh && mage start --rpc.laddr=tcp://0.0.0.0:26657"
+  mage-5:
+    image: "mage/mage:${KAVA_IMAGE_TAG:-master}"
     volumes:
-      - "./kava-5:/root/.kava"
+      - "./mage-5:/root/.mage"
     # start the blockchain, and set rpc to listen to connections from outside the container
     command:
       - "sh"
       - "-c"
-      - "/root/.kava/config/init-data-directory.sh && kava start --rpc.laddr=tcp://0.0.0.0:26657"
-  kava-6:
-    image: "kava/kava:${KAVA_IMAGE_TAG:-master}"
+      - "/root/.mage/config/init-data-directory.sh && mage start --rpc.laddr=tcp://0.0.0.0:26657"
+  mage-6:
+    image: "mage/mage:${KAVA_IMAGE_TAG:-master}"
     volumes:
-      - "./kava-6:/root/.kava"
+      - "./mage-6:/root/.mage"
     # start the blockchain, and set rpc to listen to connections from outside the container
     command:
       - "sh"
       - "-c"
-      - "/root/.kava/config/init-data-directory.sh && kava start --rpc.laddr=tcp://0.0.0.0:26657"
-  kava-7:
-    image: "kava/kava:${KAVA_IMAGE_TAG:-master}"
+      - "/root/.mage/config/init-data-directory.sh && mage start --rpc.laddr=tcp://0.0.0.0:26657"
+  mage-7:
+    image: "mage/mage:${KAVA_IMAGE_TAG:-master}"
     volumes:
-      - "./kava-7:/root/.kava"
+      - "./mage-7:/root/.mage"
     # start the blockchain, and set rpc to listen to connections from outside the container
     command:
       - "sh"
       - "-c"
-      - "/root/.kava/config/init-data-directory.sh && kava start --rpc.laddr=tcp://0.0.0.0:26657"
-  kava-8:
-    image: "kava/kava:${KAVA_IMAGE_TAG:-master}"
+      - "/root/.mage/config/init-data-directory.sh && mage start --rpc.laddr=tcp://0.0.0.0:26657"
+  mage-8:
+    image: "mage/mage:${KAVA_IMAGE_TAG:-master}"
     volumes:
-      - "./kava-8:/root/.kava"
+      - "./mage-8:/root/.mage"
     # start the blockchain, and set rpc to listen to connections from outside the container
     command:
       - "sh"
       - "-c"
-      - "/root/.kava/config/init-data-directory.sh && kava start --rpc.laddr=tcp://0.0.0.0:26657"
-  kava-9:
-    image: "kava/kava:${KAVA_IMAGE_TAG:-master}"
+      - "/root/.mage/config/init-data-directory.sh && mage start --rpc.laddr=tcp://0.0.0.0:26657"
+  mage-9:
+    image: "mage/mage:${KAVA_IMAGE_TAG:-master}"
     volumes:
-      - "./kava-9:/root/.kava"
+      - "./mage-9:/root/.mage"
     # start the blockchain, and set rpc to listen to connections from outside the container
     command:
       - "sh"
       - "-c"
-      - "/root/.kava/config/init-data-directory.sh && kava start --rpc.laddr=tcp://0.0.0.0:26657"
-  kava-10:
-    image: "kava/kava:${KAVA_IMAGE_TAG:-master}"
+      - "/root/.mage/config/init-data-directory.sh && mage start --rpc.laddr=tcp://0.0.0.0:26657"
+  mage-10:
+    image: "mage/mage:${KAVA_IMAGE_TAG:-master}"
     volumes:
-      - "./kava-10:/root/.kava"
+      - "./mage-10:/root/.mage"
     # start the blockchain, and set rpc to listen to connections from outside the container
     command:
       - "sh"
       - "-c"
-      - "/root/.kava/config/init-data-directory.sh && kava start --rpc.laddr=tcp://0.0.0.0:26657"
+      - "/root/.mage/config/init-data-directory.sh && mage start --rpc.laddr=tcp://0.0.0.0:26657"

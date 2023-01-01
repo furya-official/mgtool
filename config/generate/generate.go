@@ -8,7 +8,7 @@ import (
 
 var (
 	// ConfigTemplatesDir is the absolute path to the config templates directory.
-	// It's set at build time using an -X flag. eg -ldflags "-X github.com/kava-labs/kvtool/config/generate.ConfigTemplatesDir=/home/user1/kvtool/config/templates"
+	// It's set at build time using an -X flag. eg -ldflags "-X github.com/mage-labs/mgtool/config/generate.ConfigTemplatesDir=/home/user1/mgtool/config/templates"
 	ConfigTemplatesDir string
 )
 
@@ -25,16 +25,16 @@ func GenerateDefaultConfig(generatedConfigDir string) error {
 	return nil
 }
 
-func GenerateKavaConfig(kavaConfigTemplate, generatedConfigDir string) error {
+func GenerateKavaConfig(mageConfigTemplate, generatedConfigDir string) error {
 	// copy templates into generated config folder
-	err := copy.Copy(filepath.Join(ConfigTemplatesDir, "kava", kavaConfigTemplate), filepath.Join(generatedConfigDir, "kava"))
+	err := copy.Copy(filepath.Join(ConfigTemplatesDir, "mage", mageConfigTemplate), filepath.Join(generatedConfigDir, "mage"))
 	if err != nil {
 		return err
 	}
 
 	// put together final compose file
 	err = overwriteMergeYAML(
-		filepath.Join(ConfigTemplatesDir, "kava", kavaConfigTemplate, "docker-compose.yaml"),
+		filepath.Join(ConfigTemplatesDir, "mage", mageConfigTemplate, "docker-compose.yaml"),
 		filepath.Join(generatedConfigDir, "docker-compose.yaml"),
 	)
 	return err

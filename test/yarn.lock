@@ -65,12 +65,12 @@
     "@types/yargs" "^15.0.0"
     chalk "^3.0.0"
 
-"@kava-labs/javascript-sdk@3.0.0-beta.1":
+"@mage-labs/javascript-sdk@3.0.0-beta.1":
   version "3.0.0-beta.1"
-  resolved "https://registry.yarnpkg.com/@kava-labs/javascript-sdk/-/javascript-sdk-3.0.0-beta.1.tgz#a0d90dfbdf6d39a35b7886bf9bf65510baeb80b8"
+  resolved "https://registry.yarnpkg.com/@mage-labs/javascript-sdk/-/javascript-sdk-3.0.0-beta.1.tgz#a0d90dfbdf6d39a35b7886bf9bf65510baeb80b8"
   integrity sha512-8VTLk/JKK5bKTRBFPPvsjwOZzZL3voU6B9iAi50X5f4bRHHYrJa30RMTNGlsnCrzzcm0rvtsw1CuHtkFcystTw==
   dependencies:
-    "@kava-labs/sig" "^0.1.0"
+    "@mage-labs/sig" "^0.1.0"
     axios "^0.19.2"
     bech32 "^1.1.3"
     big.js "^5.2.2"
@@ -79,9 +79,9 @@
     lodash "^4.17.19"
     url "^0.11.0"
 
-"@kava-labs/sig@^0.1.0":
+"@mage-labs/sig@^0.1.0":
   version "0.1.0"
-  resolved "https://registry.yarnpkg.com/@kava-labs/sig/-/sig-0.1.0.tgz#c6013c64f3fc350aa611d29e998b76e87045aac9"
+  resolved "https://registry.yarnpkg.com/@mage-labs/sig/-/sig-0.1.0.tgz#c6013c64f3fc350aa611d29e998b76e87045aac9"
   integrity sha512-LvVW0aL8Z4yZzDh2yxYUBluwJfpIX2W6unbFDpKR+roB8axBXWz9hiDZiYzGMPbwQUiCGu91C0p4gqOy679Jcg==
   dependencies:
     "@tendermint/belt" "0.2.1"

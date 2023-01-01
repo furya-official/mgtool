@@ -3,7 +3,7 @@ This allows you to do things like start networks from nonzero height exports.
 
 The problem with nonzero height exports is that even if your validator has a controlling share of the power, it will not produce blocks until it is caught up, but it won't consider itself caught up until it can contact at least one other peer in the network.
 
-Maybe someday this is built into kvtool or better automated. For now, this is how to do it manually.
+Maybe someday this is built into mgtool or better automated. For now, this is how to do it manually.
 
 # UPDATE & DISCLAIMER
 
@@ -35,19 +35,19 @@ Have `docker` & `docker-compose` installed.
 
 This example uses the following, but the instructions should work for any genesis:
 * starting genesis file: `./example-genesis.json`
-* new chain id: `kavamirror_2221-1`
+* new chain id: `magemirror_2221-1`
 
 ## configure genesis to use our validators
 Replace top two validators with our nodes. Collectively give them at least 90% of the network power.
 ```sh
 mkdir keys
-cp kava-1/config/priv_validator_key.json keys/priv_validator_key_0.json
-cp kava-2/config/priv_validator_key.json keys/priv_validator_key_1.json
+cp mage-1/config/priv_validator_key.json keys/priv_validator_key_0.json
+cp mage-2/config/priv_validator_key.json keys/priv_validator_key_1.json
 
-update-genesis-validators example-genesis.json --chain-id kavamirror_2221-1 --min-power .9
+update-genesis-validators example-genesis.json --chain-id magemirror_2221-1 --min-power .9
 
-cp updated-genesis.json kava-1/config/genesis.json
-cp updated-genesis.json kava-2/config/genesis.json
+cp updated-genesis.json mage-1/config/genesis.json
+cp updated-genesis.json mage-2/config/genesis.json
 ```
 
 ## run the networks
@@ -55,15 +55,15 @@ cp updated-genesis.json kava-2/config/genesis.json
 docker-compose up
 ```
 
-## change the kava version
-By default, this uses the `master` tag of the kava docker image.
+## change the mage version
+By default, this uses the `master` tag of the mage docker image.
 You can override the tag with the `KAVA_IMAGE_TAG` env variable.
 
-To use a local version, first build & tag the kava image:
+To use a local version, first build & tag the mage image:
 ```
-# wherever the Kava-Labs/kava git repo is
-cd ~/kava
-docker build -t kava/kava:local .
+# wherever the Kava-Labs/mage git repo is
+cd ~/mage
+docker build -t mage/mage:local .
 cd -
 ```
 

@@ -1,8 +1,8 @@
 package main
 
 import (
-	"github.com/kava-labs/kava/app"
-	"github.com/kava-labs/kvtool/contrib/update-genesis-validators/cmd"
+	"github.com/mage-labs/mage/app"
+	"github.com/mage-labs/mgtool/contrib/update-genesis-validators/cmd"
 )
 
 func main() {

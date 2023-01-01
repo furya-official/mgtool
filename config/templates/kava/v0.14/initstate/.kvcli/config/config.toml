@@ -1,4 +1,4 @@
 keyring-backend = "test"
-chain-id = "kava-localnet"
+chain-id = "mage-localnet"
 trust-node = true
 broadcast-mode = "block"

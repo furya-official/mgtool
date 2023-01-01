@@ -1,10 +1,10 @@
 {
   "validators": [
     {
-      "operator_address": "kavavaloper1xcgtffvv2yeqmgs3yz4gv29kgjrj8usxrnrlwp"
+      "operator_address": "magevaloper1xcgtffvv2yeqmgs3yz4gv29kgjrj8usxrnrlwp"
     },
     {
-      "operator_address": "kavavaloper1w66m9hdzwgd6uc8g93zqkcumgwzrpcw958sh3s"
+      "operator_address": "magevaloper1w66m9hdzwgd6uc8g93zqkcumgwzrpcw958sh3s"
     }
   ],
   // each item in delegations is an account that will delegate to above validators

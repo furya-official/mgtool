@@ -52,7 +52,7 @@ func MonikersCmd(cdc *codec.Codec) *cobra.Command {
 	}
 
 	homeDir, err := os.UserHomeDir()
-	defaultGenesisFile := filepath.Join(homeDir, ".kvd/config/genesis.json")
+	defaultGenesisFile := filepath.Join(homeDir, ".mgd/config/genesis.json")
 	if err != nil {
 		defaultGenesisFile = ""
 	}

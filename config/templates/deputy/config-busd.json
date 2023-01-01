@@ -73,22 +73,22 @@
     "token_balance_alert_threshold": 50000000000000,
     "bnb_balance_alert_threshold": 50000000
   },
-  "kava_config": {
+  "mage_config": {
     "key_type": "mnemonic",
     "aws_region": "",
     "aws_secret_name": "",
     "mnemonic": "grab charge flame lamp genuine accuse truth orange split can faith spoon twist romance input raccoon tissue slice hire sauce hope fork primary unlock",
-    "rpc_addr": "tcp://kavanode:26657",
+    "rpc_addr": "tcp://magenode:26657",
     "symbol": "busd",
-    "deputy_addr": "kava1j9je7f6s0v6k7dmgv6u5k5ru202f5ffsc7af04",
-    "cold_wallet_addr": "kava1ektgdyy0z23qqnd67ns3qvfzgfgjd5xe82lf5c",
+    "deputy_addr": "mage1j9je7f6s0v6k7dmgv6u5k5ru202f5ffsc7af04",
+    "cold_wallet_addr": "mage1ektgdyy0z23qqnd67ns3qvfzgfgjd5xe82lf5c",
     "fetch_interval": 2,
     "token_balance_alert_threshold": 0,
-    "kava_balance_alert_threshold": 50000000,
+    "mage_balance_alert_threshold": 50000000,
     "tx_fee": {
       "amount": [
         {
-          "denom": "ukava",
+          "denom": "umage",
           "amount": "50000"
         }
       ],

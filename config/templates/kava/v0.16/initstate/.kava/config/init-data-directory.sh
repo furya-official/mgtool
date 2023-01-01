@@ -2,11 +2,11 @@
 set -e
 
 # This script creates a data directory if one doesn't exist.
-# It's designed to run before the chain starts to properly initialize the data directory in case `kvd init` was not run.
+# It's designed to run before the chain starts to properly initialize the data directory in case `mgd init` was not run.
 # This behaviour should probably live in tendermint.
 
-configDir=$HOME/.kava/config
-dataDir=$HOME/.kava/data
+configDir=$HOME/.mage/config
+dataDir=$HOME/.mage/data
 valStateFile=$dataDir/priv_validator_state.json
 
 if ! test -f "$valStateFile"; then

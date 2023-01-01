@@ -1,10 +1,10 @@
-const Kava = require('@kava-labs/javascript-sdk');
+const Kava = require('@mage-labs/javascript-sdk');
 const { sleep } = require("./helpers.js");
 
-const incomingSwap = async (kavaClient, bnbClient, assets, denom, amount) => {
+const incomingSwap = async (mageClient, bnbClient, assets, denom, amount) => {
   const assetInfo = assets[denom];
   if(!assetInfo) {
-      throw new Error(denom + " is not supported by kvtool BEP3");
+      throw new Error(denom + " is not supported by mgtool BEP3");
   }
 
   // Assets involved in the swap
@@ -13,8 +13,8 @@ const incomingSwap = async (kavaClient, bnbClient, assets, denom, amount) => {
   // Addresses involved in the swap
   const sender = bnbClient.getClientKeyAddress();
   const recipient = assetInfo.binanceChainDeputyHotWallet; // deputy's address on Binance Chain
-  const senderOtherChain = assetInfo.kavaDeputyHotWallet; // deputy's address on Kava
-  const recipientOtherChain = kavaClient.wallet.address;
+  const senderOtherChain = assetInfo.mageDeputyHotWallet; // deputy's address on Kava
+  const recipientOtherChain = mageClient.wallet.address;
 
   // Format asset/amount parameters as tokens, expectedIncome
   const tokens = [
@@ -66,33 +66,33 @@ const incomingSwap = async (kavaClient, bnbClient, assets, denom, amount) => {
   console.log('Expected Kava swap ID:', swapIDs.dest);
 
   await sleep(45000); // 45 seconds
-  await kavaClient.getSwap(swapIDs.dest);
+  await mageClient.getSwap(swapIDs.dest);
 
   // Send claim swap tx using Kava client
-  const txHashClaim = await kavaClient.claimSwap(
+  const txHashClaim = await mageClient.claimSwap(
     swapIDs.dest,
     randomNumber
   );
   console.log('Claim swap tx hash (Kava): '.concat(txHashClaim));
 
   // Check the claim tx hash
-  const txRes = await kavaClient.checkTxHash(txHashClaim, 15000);
+  const txRes = await mageClient.checkTxHash(txHashClaim, 15000);
   console.log('\nTx result:', txRes.raw_log);
 };
 
-const outgoingSwap = async(kavaClient, bnbClient, assets, denom, amount) => {
+const outgoingSwap = async(mageClient, bnbClient, assets, denom, amount) => {
   const assetInfo = assets[denom];
   if(!assetInfo) {
-    throw new Error(denom + " is not supported by kvtool BEP3");
+    throw new Error(denom + " is not supported by mgtool BEP3");
   }
 
-  const sender = kavaClient.wallet.address;
-  const recipient = assetInfo.kavaDeputyHotWallet; // deputy's address on kava
+  const sender = mageClient.wallet.address;
+  const recipient = assetInfo.mageDeputyHotWallet; // deputy's address on mage
   const senderOtherChain = assetInfo.binanceChainDeputyHotWallet; // deputy's address on bnbchain
   const recipientOtherChain = bnbClient.getClientKeyAddress();
 
   // Set up params
-  const asset = assetInfo.kavaDenom;
+  const asset = assetInfo.mageDenom;
 
   const coins = Kava.utils.formatCoins(amount, asset);
   const heightSpan = "250";
@@ -109,7 +109,7 @@ const outgoingSwap = async(kavaClient, bnbClient, assets, denom, amount) => {
   const swapIDs = calcSwapIDs(randomNumberHash, sender, senderOtherChain);
   console.log('Expected Kava swap ID:', swapIDs.origin);
 
-  const txHash = await kavaClient.createSwap(
+  const txHash = await mageClient.createSwap(
     recipient,
     recipientOtherChain,
     senderOtherChain,

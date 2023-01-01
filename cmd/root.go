@@ -2,13 +2,13 @@ package cmd
 
 import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/kava-labs/kava/app"
+	"github.com/mage-labs/mage/app"
 	"github.com/spf13/cobra"
 )
 
 var rootCmd = &cobra.Command{
-	Use:   "kvtool",
-	Short: "Dev tools for working with the kava blockchain.",
+	Use:   "mgtool",
+	Short: "Dev tools for working with the mage blockchain.",
 }
 
 // Execute runs the root command.
